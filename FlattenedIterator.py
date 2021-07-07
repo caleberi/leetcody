@@ -68,9 +68,12 @@ class FlattenedIterator:
             queue = itr_queue.qqueue()
             val = queue.get()
             if not queue.empty():
-                self.iteratorQueue.put(itr_queue)
-                if val and val.data is not None:
-                    return val.data
+                if val and isinstance(val.data, list):
+                    self.iteratorQueue.put(Iterator(val))
+                else:
+                    self.iteratorQueue.put(itr_queue)
+                    if val and val.data is not None:
+                        return val.data
         else:
             return None
 
@@ -86,8 +89,23 @@ class EmptyIterator:
         raise Exception()
 
 
-it = FlattenedIterator([EmptyIterator("1"), EmptyIterator("3")])
-assert(not it.hasNext())
-print(it.hasNext())
-print(it.next().name)
-print(it.next().name)
+# it = FlattenedIterator([EmptyIterator("1"), EmptyIterator("3")])
+# assert(not it.hasNext())
+# print(it.hasNext())
+# print(it.next().name)
+# print(it.next().name)
+
+it = FlattenedIterator([[1, 2, 4, 6], [7, 8, 9], [10, 11, [90]]])
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
+print(it.next())
