@@ -38,12 +38,13 @@ def wordWithinWord(words):
         for k in range(i+1, len(words)):
             # search for all words present in the  current trie just formed by
             # for current idx + 1 forward
-            searckKey = words[k]
-            if trie.search(searckKey):
-                result.add(searckKey)
+            searchKey = words[k]
+            if trie.search(searchKey):
+                result.add(searchKey)
     return list(result)
 
 
 if __name__ == "__main__":
-    word = ["abcd", "a", "bef", "c", "d", "e", "f"]
-    print(wordWithinWord(word))
+    words = ["cat", "cats", "catsdogcats", "catxdogcatsrat", "dog",
+             "dogcatsdog", "hippopotamuses", "rat", "ratcat", "life", "food", "money", "hippo"]
+    print(wordWithinWord(words))
