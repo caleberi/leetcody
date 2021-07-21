@@ -44,7 +44,18 @@ def wordWithinWord(words):
     return list(result)
 
 
+"""
+     *
+     |  [a]  [ab]
+     -> a -> b ->*
+     |  [b]  [ba]
+     -> b -> a ->*
+     |  [c]
+     -> c ->*
+"""
+
 if __name__ == "__main__":
     words = ["cat", "cats", "catsdogcats", "catxdogcatsrat", "dog",
              "dogcatsdog", "hippopotamuses", "rat", "ratcat", "life", "food", "money", "hippo"]
+    # words = ["ab", "ba", "c"]
     print(wordWithinWord(words))
