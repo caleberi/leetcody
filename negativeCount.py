@@ -41,9 +41,22 @@ def negativeCount(matrix):
             j = 0
     return count
 
+# def negativeCount(matrix):
+
+#     i = 0
+#     count = 0
+#     while i < len(matrix):
+#         j = 0
+#         while j < len(matrix[i]):
+#             if matrix[i][j] < 0:
+#                 count += len(matrix[i]) - j
+#                 break
+#             j += 1
+#         i += 1
+#     return count
+
 
 # ****************************** TESTS ******************************
-
 if __name__ == "__main__":
     print("***** Negative Count *****")
     print("Test 1:")
