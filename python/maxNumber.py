@@ -1,0 +1,2 @@
+def maxNumber(number):
+    pass

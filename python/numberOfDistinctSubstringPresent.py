@@ -1,16 +1,16 @@
-# # O(N^3) time | O(N) space
-# def numberOfDistinctSubstringPresent(string):
-#     ret = []
-#     for i in range(len(string)):
-#         s = []
-#         for j in range(i, len(string)):
-#             substring = string[i:j+1]
-#             if isDistinct(substring):
-#                 s.append(substring)
-#             else:
-#                 break
-#         ret.extend(s)
-#     return len(ret)
+# O(N^3) time | O(N) space
+def numberOfDistinctSubstringPresent(string):
+    ret = []
+    for i in range(len(string)):
+        s = []
+        for j in range(i, len(string)):
+            substring = string[i:j+1]
+            if isDistinct(substring):
+                s.append(substring)
+            else:
+                break
+        ret.extend(s)
+    return len(ret)
 
 
 def isDistinct(string):

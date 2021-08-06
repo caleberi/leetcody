@@ -7,4 +7,7 @@ def clockAngle():
     # hours = 3, minutes = 25, return 47.5
     # hours = 4, minutes = 50, return 90
     # hours = 12, minutes = 0, return 0
-    pass
+    """
+        1->30
+        3->90
+    """
