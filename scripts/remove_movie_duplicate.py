@@ -1,5 +1,7 @@
+#! /usr/bin/env python3
+
 from os import  (F_OK, W_OK, access, getcwd, makedirs,
-                 mkdir, remove, rmdir,scandir,fsdecode,path,listdir)
+                 mkdir, remove, rmdir,scandir,fsdecode,path,listdir,name as os_name)
 from sys import getfilesystemencoding
 from collections import deque
 from shutil import move
@@ -14,6 +16,8 @@ class PathNotFoundError(FileNotFoundError):
     def __str__(self) -> str:
         return f"The provided path :{self.path} with does not exist "
 
+# def validate_path_name(path):
+#     return False if not compile(r"[_-a-zA-Z0-9/\]+").match(path) else True
 
 def resolve_os_encoding(path):
     return fsdecode(path) if getfilesystemencoding() != "utf-8" else path
@@ -69,7 +73,13 @@ def move_files_to_path(destination_path, file_path):
                 f"move file : {file_name} to  {destination_path} ")
         raise err
         
-        
+
+def get_file_extension(path):
+    return path.splitext(path)[-1]
+
+def get_root_dir():
+    return "/" if os_name == "postfix" else "C:\\"
+
 
 def retrieve_filtered(filepaths):
 

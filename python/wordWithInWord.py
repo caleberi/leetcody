@@ -67,8 +67,8 @@ def wordWithinWord(words):
 """
 
 if __name__ == "__main__":
-    # words = ["cat", "cats", "catsdogcats", "catxdogcatsrat", "dog",
-    #          "dogcatsdog", "hippopotamuses", "rat", "ratcat", "life", "food", "money", "hippo"]
+    words = ["cat", "cats", "catsdogcats", "catxdogcatsrat", "dog",
+             "dogcatsdog", "hippopotamuses", "rat", "ratcat", "life", "food", "money", "hippo"]
     # words = ["ab", "ba", "c"]
-    words = ["abc", "a", "b"]
+    # words = ["abc", "a", "b"]
     print(wordWithinWord(words))

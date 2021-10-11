@@ -112,7 +112,7 @@ class WordFilterTestCase(unittest.TestCase):
         w = WordFilter(["apple", "orange", "banana", "mango",
                         "return", "manufacture", "time"])
         # self.assertDictEqual(
-        #     w.hash, {'a#': [0, 0], '#e': [0, 0, 1], 'ap#': [0, 0], '#le': [0, 0],
+        #     w.cache, {'a#': [0, 0], '#e': [0, 0, 1], 'ap#': [0, 0], '#le': [0, 0],
         #              'app#': [0, 0], '#ple': [0, 0], 'appl#': [0, 0],
         #              '#pple': [0, 0], 'apple#': [0, 0],
         #              '#apple': [0, 0], 'o#': [1, 1], 'or#': [1, 1],
