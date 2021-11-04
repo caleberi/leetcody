@@ -3,8 +3,6 @@ class QNode:
         self.data = data
         self.next = None
 
-    def hasNext(self):
-        return self.next is not None
 
 
 class Queue:
@@ -12,29 +10,26 @@ class Queue:
         self.head = None
         self.tail = None
 
-    def put(self, value):
+    def pushBack(self, value):
         if self.empty():
             self.head = self.tail = QNode(value)
         else:
             node = QNode(value)
             self.tail.next = node
             self.tail = node
+    
+    def hasNext(self):
+        return self.head is not None and self.tail is not None
 
-    def get(self):
+    def popfront(self):
         if self.empty():
             return None
         else:
             currentHead = self.head
-            if currentHead is None:
-                newHead = None
-                self.head = newHead
-                return currentHead
             newHead = currentHead.next
             self.head = newHead
+            currentHead.next = None
             return currentHead
-
-    def top(self):
-        return self.head.data if self.head is not None else None
 
     def empty(self):
         return self.head is None and self.tail is None
@@ -45,9 +40,10 @@ class Iterator:
         self.queue = Queue()
         if hasattr(input, '__len__'):
             for data in input:
-                self.queue.put(data)
+                self.queue.pushBack(data)
         else:
-            self.queue.put(input)
+            self.queue.pushBack(input)
+
 
     def qqueue(self):
         return self.queue
@@ -60,7 +56,7 @@ class FlattenedIterator:
             self.iteratorQueue.put(Iterator(iterator))
 
     def hasNext(self):
-        return not self.iteratorQueue.top().qqueue().empty()
+        return not self.iteratorQueue.hasNext()
 
     def next(self):
         if self.hasNext():
