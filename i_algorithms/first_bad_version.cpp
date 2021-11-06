@@ -1,5 +1,7 @@
 // The API isBadVersion is defined for you.
-// bool isBadVersion(int version);
+
+#include <vector>
+using namespace std;
 
 class Solution {
 public:
