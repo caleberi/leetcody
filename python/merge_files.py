@@ -41,6 +41,7 @@ def merge_files(file_list,dest_file):
     while len(queue) > 1:
         largest = queue.popleft()
         smallest = queue.pop()
+
         with open(largest[2],"a")  as fs:
             small_file = open(smallest[2])
             fs.write("\n")
