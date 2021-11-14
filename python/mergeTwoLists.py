@@ -1,8 +1,11 @@
+from typing import Optional
+
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         p1 = l1
@@ -51,3 +54,36 @@ class Solution:
                     p2 = p2.next
 
         return ret
+
+
+class Solution:
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        if l1 is None and l2 is None:
+            return None
+        if l1 is None and l2 is not None:
+            return l2
+        if l2 is None and l1 is not None:
+            return l1
+
+        ret = ListNode(-1)
+        curr = ret
+        while l1 is not None and l2 is not None :
+            if l1.val >= l2.val:
+                curr.next = ListNode(l2.val)
+                l2 = l2.next
+                curr = curr.next
+            else:
+                curr.next = ListNode(l1.val)
+                l1 = l1.next
+                curr = curr.next
+                
+        while l1 is not None and l2 is None:
+            curr.next = ListNode(l1.val)
+            l1 = l1.next
+            curr = curr.next
+
+        while l2 is not None and l1 is  None:
+            curr.next = ListNode(l2.val)
+            l2 = l2.next
+            curr = curr.next
+        return ret.next
