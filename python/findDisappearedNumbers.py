@@ -15,3 +15,18 @@ class Solution(object):
             if counter[idx] == 0:
                 l.append(idx+1)
         return l
+
+class Solution:
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        if not len(nums):
+            return nums
+        l = [0 for i in range(len(nums)+1)]
+        for i in range(len(nums)):
+            n = nums[i]
+            l[n]= 1
+        r = []
+        for i in range(1,len(l)):
+            if l[i]==0:
+                r.append(i)
+        return r
+        
