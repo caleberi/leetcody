@@ -9,22 +9,18 @@ class Tree {
 function digitTreeSum(tree){
     function digitTreeSumHelper(tree){
         if (tree==null){
-            return []
+            return [0,1];
         }
-        var leftReturnCall = digitTreeSum(tree.left);
-        var rightReturnCall = digitTreeSum(tree.right);
-        for(var i=0;i<leftReturnCall.length;i++)
-            leftReturnCall[i].shift(tree.value);
-        for(var i=0;i<rightReturnCall.length;i++)
-            rightReturnCall[i].shift(tree.value);
-        return [leftReturnCall, rightReturnCall]
+        if (tree.left==null&& tree.right ==null){
+            return [tree.value,1]
+        }
+
+        var [lvalue,ldecimal] = digitTreeSum(tree.left);
+        var [rvalue,rdecimal] = digitTreeSum(tree.right);
+        var total = (lvalue*ldecimal)+(rdecimal*rdecimal);
+        return [total, Math.max(ldecimal,rdecimal)*10]
     }
-    function getValue(array){
-        var ret=0;
-        for (var i=array.length-1;i>=0;i--)
-            ret+=(array.length-1-i)*array[i]
-        return ret;
-    }
+    
     var result = digitTreeSumHelper(tree)
     var sum=0
     for (var i=0;i<result.length;i++){
@@ -32,3 +28,33 @@ function digitTreeSum(tree){
     }
     return sum;
 }
+
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+ var sumNumbers = function(root) {
+    function digitTreeSumHelper(tree){
+        if (tree==null){
+            return [0,1];
+        }
+        if (tree.left==null&& tree.right ==null){
+            return [tree.value,1]
+        }
+
+        var [lvalue,ldecimal] = digitTreeSum(tree.left);
+        var [rvalue,rdecimal] = digitTreeSum(tree.right);
+        var total = (lvalue*ldecimal)+(rdecimal*rdecimal);
+        return [total, Math.max(ldecimal,rdecimal)*10]
+    }
+    return digitTreeSumHelper(root);
+};

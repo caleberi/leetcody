@@ -85,7 +85,7 @@ class EmptyIterator:
         raise Exception()
 
 
-# it = FlattenedIterator([EmptyIterator("1"), EmptyIterator("3")])
+it = FlattenedIterator([EmptyIterator("1"), EmptyIterator("3")])
 # assert(not it.hasNext())
 # print(it.hasNext())
 # print(it.next().name)

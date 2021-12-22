@@ -24,7 +24,7 @@ class Solution:
         while i<n:
             m=m.next
             i+=1
-        nodetodelete=m.next
+        nodetodelete = m.next
         after=None
         if m.next is not None:
             after = m.next.next
