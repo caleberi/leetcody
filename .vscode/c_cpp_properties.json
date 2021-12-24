@@ -11,7 +11,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "8.1",
-            "compilerPath": "/usr/bin/clang"
+            "compilerPath": "C:/MinGW/bin/g++.exe"
         }
     ],
     "version": 4

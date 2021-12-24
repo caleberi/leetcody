@@ -45,6 +45,7 @@ def deepestLeafSumHelper(node, detail):
         detail.node = node
     return detail
 
+
 """
 [1,{0,1,0}] [1,{15,1,4}]
 [2,{0,2,1}] [2,{7,2,4}] [2,{7,2,4}] [3,{7,2,4}] [3,{15,2,4}]
