@@ -32,7 +32,6 @@ public:
 
         vector<vector<int>> ret;
         int start = costDistanceForPoints.size() - k;
-        cout << start << endl;
         for (; start < costDistanceForPoints.size(); start++)
             ret.push_back(costDistanceForPoints[start].first);
 
