@@ -20,3 +20,25 @@ class Solution:
         for r in result:
             total += int(r)
         return total
+
+
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        def sumNumberHelper(tree, result, number=0):
+            if tree is None:
+                return
+            if tree and tree.left is None and tree.right is None:
+                number *= 10
+                number += tree.val
+                result.append(number)
+                number /= 10
+                return
+            number *= 10
+            number += tree.val
+            sumNumberHelper(tree.left, result, number)
+            sumNumberHelper(tree.right, result, number)
+            number /= 10
+
+        result = []
+        sumNumberHelper(root, result)
+        return sum(result)
