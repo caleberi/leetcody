@@ -2,6 +2,7 @@ class ProvinceGraph:
     def __init__(self, n_cities):
         self.root = [i for i in range(n_cities)]
         self.rank = [1]*n_cities
+        self.count = n_cities
 
     def find(self, x):
         if x == self.root[x]:
@@ -23,6 +24,10 @@ class ProvinceGraph:
             else:
                 self.root[root_y] = root_x
                 self.rank[root_x] += 1
+            self.count -= 1
+
+    def get_provinces_group_count(self):
+        return self.count
 
 
 def find_provincial_circle(matrix):
