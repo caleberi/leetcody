@@ -23,7 +23,7 @@ class Solution:
                 current = dq.popleft()
                 if current.left:
                     dq.append(current.left)
-                if current.left:
+                if current.right:
                     dq.append(current.right)
                 size -= 1
             csize = len(dq)
