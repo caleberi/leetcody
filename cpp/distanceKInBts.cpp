@@ -18,6 +18,10 @@ struct TreeNode {
 };
 
 
+// 57 / 57 test cases passed.
+// Status: Accepted
+// Runtime: 8 ms
+// Memory Usage: 15.1 MB
 class Solution {
 public:
     vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
