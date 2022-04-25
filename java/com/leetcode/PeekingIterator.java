@@ -6,8 +6,10 @@ import java.util.LinkedList;
 // Java Iterator interface reference:
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 
-import java.util.Iterator;
-import java.util.LinkedList;
+// 14 / 14 test cases passed.
+// Status: Accepted
+// Runtime: 8 ms
+// Memory Usage: 43.7 MB
 
 public class PeekingIterator implements Iterator<Integer> {
     private Iterator<Integer> iterator;
