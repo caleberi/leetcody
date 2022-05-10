@@ -1,3 +1,8 @@
+# 182 / 182 test cases passed.
+# Status: Accepted
+# Runtime: 216 ms
+# Memory Usage: 15.3 MB
+
 from typing import Optional
 
 
