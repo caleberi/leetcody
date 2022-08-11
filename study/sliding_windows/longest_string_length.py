@@ -11,7 +11,7 @@ def find_longest_substring(string):
         if current not in seen:
             seen[current] = end
         elif current in seen:
-            temp = end-start
+            temp = end - start
             start = seen[current]+1
             max_len =  max(temp,max_len)
         end += 1
