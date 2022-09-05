@@ -1,5 +1,3 @@
-from ast import Not
-
 
 def detectCycle(head):
     if head is None or head.next is None or head.next.next is None:

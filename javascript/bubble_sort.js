@@ -7,7 +7,6 @@ function bubble_sort(array,n){
             array[j+1] = array[j];
             array[j] = temp;
         }
-        
     }
     return bubble_sort(array,n-1);
 }

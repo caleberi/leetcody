@@ -56,7 +56,6 @@ void parse_configuration(const char *ininame, cfg* cfg) {
   cfg->body->to = strdup(iniparser_getstring(ini, "body:to", "to@example.com"));
   cfg->body->to_name = strdup(iniparser_getstring(ini, "body:to_name", "toName"));
   
-  
   iniparser_freedict(ini);
 };
 

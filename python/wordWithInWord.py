@@ -31,7 +31,7 @@ class TrieNode:
         node.children[node.symbol] = wordSoFar
 
     def search(self, word):
-        node = self
+        node = self  
         for letter in word:
             if letter not in node.children:
                 return False
